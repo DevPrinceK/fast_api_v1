@@ -1,19 +1,15 @@
 from fastapi import FastAPI
 
-
 app = FastAPI()
 
 
 @app.get('/')
 async def hello_world():
-    return {
-        "salutation":"Hello, world",
-        "body":"I am learning fastapi"
-    }
+    '''Return a simple hellow world greeting'''
+    return {"salutation": "Hello, world", "body": "I am learning fastapi"}
 
 
 @app.get('/greet/{person}')
 async def greet_person(person: str):
-    return {
-        'greeting': f'hello, {person}'
-    }
+    '''Return a simple greeting using url params'''
+    return {'greeting': f'hello, {person}'}
